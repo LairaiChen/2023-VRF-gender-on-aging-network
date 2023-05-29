@@ -130,12 +130,6 @@ for eid in open(PATH_EID_TXT):
     command_sc_atlas = " conmat -inputfile " + path_camino_track_post + " -targetfile " + path_atlas_dti + " -outputroot " + path_output_csv
     os.system(command_sc_atlas)
 
-    # Construct SC-network based on AAL 90
-    path_atlas_dti = path_aal_to_dti
-    path_output_csv = path_eid + "csv_raw_aal_"
-    command_sc_atlas = " conmat -inputfile " + path_camino_track_post + " -targetfile " + path_atlas_dti + " -outputroot " + path_output_csv
-    os.system(command_sc_atlas)
-
     #end = time.time()
     #print("CAMINO takes: " + str(end-start) + 's')
 
