@@ -1,6 +1,5 @@
 import os
 import sys
-#import time
 
 #print("****************Entering New Job********************")
 PATH_JOB = sys.argv[1] + "/"  # Gets working directory from command ars
