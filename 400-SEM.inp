@@ -1,0 +1,21 @@
+VARIABLE: NAMES ARE eid gender age alco smok obes hype diab wmh eg eloc
+                flui reac tmta tmtb nume symb matr;
+          USEOBSERVATIONS ARE gender EQ 0;!0==female
+          USEVARIABLES ARE age alco smok obes hype diab wmh eg
+                flui reac tmta tmtb nume symb matr;
+          CATEGORICAL ARE alco smok obes hype diab;
+DEFINE: STANDARDIZE age wmh eg
+        flui reac tmta tmtb nume symb matr;
+
+MODEL:
+  vrs by alco smok obes hype diab;
+  cog by flui reac tmta tmtb nume symb matr;
+  vrs on age;
+  wmh on age vrs;
+  eg on age wmh vrs;
+  cog on age eg vrs wmh;
+  nume with flui;
+  tmta with tmtb;
+  matr with flui;
+
+OUTPUT:STANDARDIZED MODINDICES(ALL 4);
